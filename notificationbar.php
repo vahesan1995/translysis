@@ -34,11 +34,11 @@
     <script src="js/w3.js"></script>
 
     <div class="header-main" style=" width: 1200px">
-        <div class="col-md-6" style="background-color: #9d0000; align-content: center">
-            <h1><a href="home.php" style="color: #d9edf7; align-content: center">Translysis Platform</a></h1>
+        <div class="col-md-8" style="background-color: #A9A9A9; align-content: center">
+            <h1><a href="home.php" style="color: #ffffff; align-content: center"><b>"TRANSLYSIS"</b> - Webhook Platform</a></h1>
         </div>
 
-        <div class="col-md-1" style="background-color: #253ce6">
+        <div class="col-md-1" style="background-color: #6699CC">
             <div class="profile_details_left"><!--notifications of menu start -->
                 <ul class="nofitications-dropdown">
                     <li class="dropdown head-dpdn">
@@ -100,9 +100,8 @@
             </div>
             <!--notification menu end -->
 
-            <div class="clearfix"> </div>
         </div>
-        <div class="profile_details w3l">
+        <div class="profile_details w3" style="background-color: #666699; width: 220px">
             <ul>
                 <li class="dropdown profile_details_drop">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
