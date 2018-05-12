@@ -95,7 +95,7 @@ $userName = $_SESSION['username'];
                                 $filename = $fileObj->filename;
                                 $date = $fileObj->date;
                                 $size=$fileObj->size;
-                                //$link=$fileObj->link;
+                                $link=$fileObj->link;
                                 $count+=1;
 
                                 $date = strtotime(str_replace(',', '', $date));
@@ -111,7 +111,7 @@ $userName = $_SESSION['username'];
 <!--                                    <td >--><?php //echo $link ?><!--</td>-->
                                     <td><div class="row">
                                             <div class="col-sm-8 col-sm-offset-2">
-                                                <a href = "downloadfile.php?link=<?php echo $link;?>"  <button class="btn-primary btn" id="download">Download</button> </a>
+                                                <a href = <?php echo $link?>><button class="btn-primary btn" id="download">Download</button> </a>
                                             </div>
                                         </div>
                                     </td>
