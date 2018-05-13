@@ -11,10 +11,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!--<script src="https://www.w3schools.com/lib/w3.js"></script>-->
-    <script src="js/w3.js"></script>
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!--<script src="https://www.w3schools.com/lib/w3.js"></script>-->
-    <script src="js/w3.js"></script>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
     <!-- Custom CSS -->
@@ -150,17 +148,17 @@
                 <div class="mySlides fade">
 <!--                    <div class="numbertext">1 / 3</div>-->
                     <img src="images/bigdata.png" style="width:100%">
-                    <div class="text" style="color: #008DE7">After Big Data Analysis</div>
+<!--                    <div class="text" style="color: #008DE7">After Big Data Analysis</div>-->
                 </div>
                 <div class="mySlides fade">
 <!--                    <div class="numbertext">2 / 3</div>-->
                     <img src="images/data-analytics.jpg" style="width:100%">
-                    <div class="text" style="color: #008DE7">Get Your Results</div>
+<!--                    <div class="text" style="color: #008DE7">Get Your Results</div>-->
                 </div>
                 <div class="mySlides fade">
 <!--                    <div class="numbertext">3 / 3</div>-->
                     <img src="images/download.png" style="width:100%">
-                    <div class="text" style="color: #008DE7">Download Results</div>
+<!--                    <div class="text" style="color: #008DE7">Download Results</div>-->
                 </div>
             </div>
             <br>
