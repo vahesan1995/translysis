@@ -1,8 +1,8 @@
 <?php
-    include_once('config.php');
-    include_once('system_session.php');
-    $username = $_SESSION['username'];
-   // include "notifications.php";
+include_once('config.php');
+include_once('system_session.php');
+$username = $_SESSION['username'];
+include "notifications.php";
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -42,64 +42,36 @@
             <div class="profile_details_left"><!--notifications of menu start -->
                 <ul class="nofitications-dropdown">
                     <li class="dropdown head-dpdn">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="badge">2</span><i class="fa fa-newspaper-o"></i></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="badge"><?php echo $count; ?></span><i class="fa fa-newspaper-o"></i></a>
                         <!--This span is for number of notification-->
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="notification_header">
-                                    <h3>You have <?php echo 'hi'; ?> new messages</h3>
+                                    <h3>You have <?php echo $count; ?> new files</h3>
                                 </div>
                             </li>
-                                <div>
-                                    <li class="odd"><a href="#">
-                                            <div class="user_img"><img src="images/expiry.jpg" alt=""></div>
-                                            <div class="notification_desc">
-                                                <p>Nothing</p>
-                                            </div>
-                                            <div class="clearfix"></div></a>
-                                    </li>
-                                </div>
+                            <div>
+                                <li class="odd"><a href="hidenotification.php">
+                                        <div class="user_img"><img src="images/openfile.png" alt=""></div>
+                                        <div class="notification_desc">
+                                            <h5>View the received files</h5>
+                                        </div>
+                                        <div class="clearfix"></div></a>
+                                </li>
+                            </div>
                             <div class="notification_bottom">
                                 <a href="#">End of notifications</a>
                             </div>
                             </li>
                         </ul>
-                   </li>
-    <!--                <li class="dropdown head-dpdn">-->
-    <!--                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-cart-arrow-down"></i><span class="badge blue">1</span></a>-->
-    <!--                    <ul class="dropdown-menu">-->
-    <!--                        <li>-->
-    <!--                            <div class="notification_header">-->
-    <!--                                <h3>You have --><?php //echo 'hello';?><!-- notification </h3>-->
-    <!--                            </div>-->
-    <!--                        </li>-->
-    <!--                        <div class="notification_bottom">-->
-    <!--                            <a href="#">End of notifications</a>-->
-    <!--                        </div>-->
-    <!--                        </li>-->
-    <!--                    </ul>-->
-    <!--                </li>-->
-    <!--                <li class="dropdown head-dpdn">-->
-    <!--                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-truck"></i><span class="badge blue1"> 0 </span></a>-->
-    <!--                    <ul class="dropdown-menu">-->
-    <!--                        <li>-->
-    <!--                            <div class="notification_header">-->
-    <!--                                <h3>You have 0 notifications</h3>-->
-    <!--                            </div>-->
-    <!--                        </li>-->
-    <!--                   <li>-->
-    <!--                       <div class="notification_bottom">-->
-    <!--                           <a href="#">End of notifications</a>-->
-    <!--                       </div>-->
-    <!--                   </li>-->
-    <!--                    </ul>-->
-    <!--                </li>-->
+                    </li>
                     <div class="clearfix"> </div>
                 </ul>
                 <div class="clearfix"> </div>
             </div>
             <!--notification menu end -->
 
+            <div class="clearfix"> </div>
         </div>
         <div class="profile_details w3" style="background-color: #666699; width: 220px">
             <ul>
