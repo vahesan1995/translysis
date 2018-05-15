@@ -1,7 +1,7 @@
 <?php
-    include_once('config.php');
-    include_once('system_session.php');
-    $userName = $_SESSION['username'];
+include_once('config.php');
+include_once('system_session.php');
+$userName = $_SESSION['username'];
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -11,8 +11,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!--<script src="https://www.w3schools.com/lib/w3.js"></script>-->
+    <script src="js/w3.js"></script>
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!--<script src="https://www.w3schools.com/lib/w3.js"></script>-->
+    <script src="js/w3.js"></script>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
     <!-- Custom CSS -->
@@ -50,20 +52,20 @@
     <!-- lined-icons -->
     <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
     <!-- //lined-icons -->
-   <div class="page-container">
-   <!--/content-inner-->
-    <div class="left-content">
-	   <div class="mother-grid-inner">
-             <!--header start here-->
-              <?php
-            include_once("notificationbar.php");
-            include_once("sidebar.php");
-            ?>
-       </div>
+    <div class="page-container">
+        <!--/content-inner-->
+        <div class="left-content">
+            <div class="mother-grid-inner">
+                <!--header start here-->
+                <?php
+                include_once("notificationbar.php");
+                include_once("sidebar.php");
+                ?>
+            </div>
+        </div>
     </div>
-   </div>
-<!--</head>-->
-<!--header end here-->
+    <!--</head>-->
+    <!--header end here-->
     <style>
         * {box-sizing: border-box;}
         body {font-family: Verdana, sans-serif;}
@@ -118,6 +120,10 @@
             -webkit-animation-duration: 1.5s;
             animation-name: fade;
             animation-duration: 1.5s;
+            margin-top: 5%;
+            left: 0%;
+            margin-right: -20%;
+            transform: translate(0%,-10%)
         }
 
         @-webkit-keyframes fade {
@@ -146,19 +152,19 @@
         <div class="stats-info stats-last widget-shadow">
             <div class="slideshow-container">
                 <div class="mySlides fade">
-<!--                    <div class="numbertext">1 / 3</div>-->
+                    <!--<div class="numbertext">1 / 3</div>-->
                     <img src="images/bigdata.png" style="width:100%">
-<!--                    <div class="text" style="color: #008DE7">After Big Data Analysis</div>-->
+                    <!--<div class="text" style="color: #008DE7">After Big Data Analysis</div>-->
                 </div>
                 <div class="mySlides fade">
-<!--                    <div class="numbertext">2 / 3</div>-->
-                    <img src="images/data-analytics.jpg" style="width:100%">
-<!--                    <div class="text" style="color: #008DE7">Get Your Results</div>-->
+                    <!--<div class="numbertext">2 / 3</div>-->
+                    <img src="images/data-analytics.jpg" style="width:103%">
+                    <!--<div class="text" style="color: #008DE7">Get Your Results</div>-->
                 </div>
                 <div class="mySlides fade">
-<!--                    <div class="numbertext">3 / 3</div>-->
-                    <img src="images/download.png" style="width:100%">
-<!--                    <div class="text" style="color: #008DE7">Download Results</div>-->
+                    <!--<div class="numbertext">3 / 3</div>-->
+                    <img src="images/g1.jpg" style="width:103%">
+                    <!--<div class="text" style="color: #008DE7">Download Results</div>-->
                 </div>
             </div>
             <br>
@@ -233,7 +239,7 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 <!-- /Bootstrap Core JavaScript -->
-<!-- morris JavaScript -->	
+<!-- morris JavaScript -->
 <script src="js/raphael-min.js"></script>
 <script src="js/morris.js"></script>
 </html>
