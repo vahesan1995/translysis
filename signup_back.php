@@ -2,6 +2,7 @@
 include_once("config.php");
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+//get inputs
     $name = $_POST['name'];
     $username = $_POST['username'];
     $email = $_POST['email'];
@@ -10,7 +11,7 @@ ini_set('display_errors', 1);
     $platform = $_POST['platform'];
     $erreturn_value="username=".$username;
 
-    if($password==$confirmPassword)
+    if($password==$confirmPassword) //check passwords
     {
         $password = md5($password);
         $results=$mysqli->query("SELECT count(username) as count from user where username ='".$username."'");
