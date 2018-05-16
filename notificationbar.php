@@ -17,7 +17,6 @@ include "notifications.php";
     <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-
     <link rel="stylesheet" href="css/morris.css" type="text/css"/>
     <!-- Graph CSS -->
     <link href="css/font-awesome.css" rel="stylesheet">
