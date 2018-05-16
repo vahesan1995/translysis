@@ -1,17 +1,17 @@
 <?php
 include_once("config.php");
 include_once('system_session.php');
-$userName = $_SESSION['username'];
+$userName = $_SESSION['username'];  //username of current user
 
-$userQuery = "SELECT * from user where username='$userName'";
+$userQuery = "SELECT * from user where username='$userName'";   //getting user details
 $userQuery = $mysqli->query($userQuery);
 while($userObj = $userQuery->fetch_object()) {
+    //user details to display
     $username = $userObj->username;
     $name = $userObj->name;
     $email = $userObj->email;
     $platform = $userObj->platform;
 }
-
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -51,7 +51,7 @@ while($userObj = $userQuery->fetch_object()) {
             <!--grid-->
             <div class="validation-system">
                 <div class="validation-form">
-                    <!---->
+                    <!--user details form-->
                     <form action="editdetails_back.php" method="post" name="form1">
                         <?php if(isset($_GET['err']))
                         {
@@ -59,14 +59,7 @@ while($userObj = $userQuery->fetch_object()) {
                             {
                                 echo "<p class='text-danger' style='text-align: center;'> Incorrect Password.</p>";
                             }
-                            else if($_GET['err']=='indexNoLen')
-                            {
-                                echo "<p class='text-danger' style='text-align: center;'> Something wrong with your index number, Please Check!</p>";
-                            }
-                            else if($_GET['err']=='indexNotNo')
-                            {
-                                echo "<p class='text-danger' style='text-align: center;'> Something wrong with your index number, Please Check!</p>";
-                            }
+
                             else if($_GET['err']=='duplicate')
                             {
                                 echo "<p class='text-danger' style='text-align: center;'> No Changes Detected, Please Check!</p>";
@@ -84,6 +77,7 @@ while($userObj = $userQuery->fetch_object()) {
                             <div class="col-md-12 form-group1">
                                 <label class="control-label">Name</label>
                                 <input type="text" value="<?php echo $name; ?>" required="" id="name" name="name" onkeyup="Check1(event)" onkeydown="Check1(event)">
+                                <!--Script to disable unwanted keys-->
                                 <script>
                                     function Check1(e) {
                                         var keyCode = (e.keyCode ? e.keyCode : e.which);
@@ -119,21 +113,16 @@ while($userObj = $userQuery->fetch_object()) {
                             <label class="control-label">Password</label><br>
                             <input onkeyup="password()" id="password" type="password"  name="password" placeholder="" required="">
                         </div>
-
                         <div class="clearfix"> </div><br>
                         <div class="col-md-12 form-group">
                             <button type="submit" class="btn btn-primary">Update</button>
                             <a href="viewdetails.php"><button type="button" class="btn btn-default">Back</button></a>
                         </div>
-
                         <div class="clearfix"> </div>
                     </form>
-                    <!---->
                 </div>
-
             </div>
             <!--//grid-->
-
             <!-- script-for sticky-nav -->
             <script>
                 $(document).ready(function() {
@@ -149,23 +138,17 @@ while($userObj = $userQuery->fetch_object()) {
                 });
             </script>
             <!-- /script-for sticky-nav -->
-            <!--inner block start here-->
-            <div class="inner-block">
-
-            </div>
-            <!--inner block end here-->
             <!--copy rights start here-->
             <div class="copyrights">
-                <p>© 2017 SELLIT . All Rights Reserved | Design by  <a href="#" target="_blank">Matlogic</a> </p>
+                <p>© 2018 VSOlv . All Rights Reserved </p>
             </div>
             <!--COPY rights end here-->
         </div>
     </div>
-    <!--//content-inner-->
     <!--/sidebar-menu-->
-
     <div class="clearfix"></div>
 </div>
+<!--Script for sidebar-->
 <script>
     var toggle = true;
 
@@ -192,6 +175,5 @@ while($userObj = $userQuery->fetch_object()) {
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 <!-- /Bootstrap Core JavaScript -->
-
 </body>
 </html>
