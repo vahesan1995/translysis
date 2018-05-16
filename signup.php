@@ -114,7 +114,7 @@ else if(isset($_GET['success']))
 </html>
 
 <!--Validation code-->
-//function for phone number
+//script for phone inputs
 <script>
     function name() {
         var content = document.getElementById("firstname").value;
