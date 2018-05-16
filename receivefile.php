@@ -14,7 +14,6 @@ $filename=$filename.(string)$count.'.pdf';
 $path = '/storage/ssd4/319/5689319/public_html/files/'.$filename;  // location to save file
 $newfname = $path;
 //File Transfer
-echo 'Starting File Transfer!<br>';
 $file = fopen ($url, "rb");
 if($file) {
     $newf = fopen ($newfname, "wb");
@@ -29,7 +28,6 @@ if($file) {
 if($newf) {
     fclose($newf);
 }
-echo 'File Transfered!';
 
 $date=date('Y-m-d H:i:s');  //received date and time
 
