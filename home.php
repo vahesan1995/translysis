@@ -60,7 +60,7 @@ $userName = $_SESSION['username'];
         </div>
     </div>
     <!--</head>-->
-    <!--header end here-->
+    <!--script for slide show designs-->
     <style>
         * {box-sizing: border-box;}
         body {font-family: Verdana, sans-serif;}
