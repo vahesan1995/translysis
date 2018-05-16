@@ -27,8 +27,10 @@
 	<div class="container">
 	<div class="sin-w3-agile">
 		<h2>Sign In</h2>
+        <!--login form-->
 		<form action="login.php" method="post">
             <?php
+            //error display
             if(isset($_GET['error']))
             {
                 $userId="has-error";
@@ -43,15 +45,12 @@
                 if($arrived_msg==md5("wrongUsernamePassword"))
                 { ?>
                     <label style="width:100%; margin: 0 auto;text-align:center; position: relative;  float: none;"> <p>Username or Password is incorrect</p></label>
-
-
                     <?php
                 }
                 elseif($arrived_msg==md5("waitForActivation"))
                 {
                     ?>
                     <label class="control-label" for="inputError" style="width:100%; margin: 0 auto;text-align:center; position: relative;  float: none;"><p>Please.. Wait for the activation </p></label>
-
                     <?php
                 }
                 else
@@ -61,18 +60,20 @@
                     <?php
                 }}
             ?>
+
 			<div class="username">
 				<span class="username">Username:</span>
 				<input id = "username" type="text" name="username" class="name" placeholder="" required="">
 				<div class="clearfix"></div>
 			</div>
+
 			<div class="password-agileits">
 				<span class="username">Password:</span>
 				<input id = "password" type="password" name="password" class="password" placeholder="" required="">
 				<div class="clearfix"></div>
 			</div>
 
-			<div class="login-w3">
+            <div class="login-w3">
 					<input type="submit" class="login" value="Sign In">
 			</div>
 			<div class="clearfix"></div>
