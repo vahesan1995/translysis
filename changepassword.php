@@ -2,12 +2,11 @@
 include_once("config.php");
 include_once('system_session.php');
 $userName = $_SESSION['username'];
-
 ?>
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Edit User Details</title>
+    <title>Change Password</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -42,8 +41,9 @@ $userName = $_SESSION['username'];
             <!--grid-->
             <div class="validation-system">
                 <div class="validation-form">
-                    <!---->
+                    <!-- password change form-->
                     <form action="changepassword_back.php" method="post" name="form1">
+                        <!--password comparision outputs-->
                         <?php if(isset($_GET['err']))
                         {
                             if($_GET['err']=='passMissMatch')
@@ -55,7 +55,6 @@ $userName = $_SESSION['username'];
                                 echo "<p class='text-danger' style='text-align: center;'> New Passwords Mismatch</p>";
                             }
                         }
-
                         else if(isset($_GET['success']))
                         {
                             if($_GET['success']=='saved')
@@ -63,7 +62,6 @@ $userName = $_SESSION['username'];
                                 echo "<p class='text-success' style='text-align: center;'>Password Changed</p>";
                             }
                         } ?>
-
                         <div class="clearfix"> </div>
                         <div class=" col-md-12 password-agileits form-group1">
                             <label class="control-label">Current Password</label><br>
@@ -92,10 +90,8 @@ $userName = $_SESSION['username'];
                     </form>
                     <!---->
                 </div>
-
             </div>
             <!--//grid-->
-
             <!-- script-for sticky-nav -->
             <script>
                 $(document).ready(function() {
@@ -111,23 +107,17 @@ $userName = $_SESSION['username'];
                 });
             </script>
             <!-- /script-for sticky-nav -->
-            <!--inner block start here-->
-            <div class="inner-block">
-
-            </div>
-            <!--inner block end here-->
             <!--copy rights start here-->
             <div class="copyrights">
-                <p>© 2017 SELLIT . All Rights Reserved | Design by  <a href="#" target="_blank">Matlogic</a> </p>
+                <p>© 2018 VSolv. All Rights Reserved </p>
             </div>
             <!--COPY rights end here-->
         </div>
     </div>
-    <!--//content-inner-->
     <!--/sidebar-menu-->
-
     <div class="clearfix"></div>
 </div>
+<!--script for side bar contraction and expansion-->
 <script>
     var toggle = true;
 
@@ -144,7 +134,6 @@ $userName = $_SESSION['username'];
                 $("#menu span").css({"position":"relative"});
             }, 400);
         }
-
         toggle = !toggle;
     });
 </script>
@@ -154,6 +143,5 @@ $userName = $_SESSION['username'];
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 <!-- /Bootstrap Core JavaScript -->
-
 </body>
 </html>
