@@ -87,7 +87,7 @@ $userName = $_SESSION['username'];
                             </thead>
                             <tbody>
                             <?php
-                            $fileQuery = "SELECT * from files where username='$username' ORDER BY date DESC ";
+                            $fileQuery = "SELECT * from files where username='$username' ORDER BY date DESC ";  //get file details
                             $fileQuery = $mysqli->query($fileQuery);
                             $count=0;
                             while($fileObj = $fileQuery->fetch_object()){
@@ -108,6 +108,7 @@ $userName = $_SESSION['username'];
                                     <td><?php echo $time?></td>
                                     <td ><?php echo $size?></td>
                                     <td><div class="row">
+                                            <!--download file-->
                                             <div class="col-sm-8 col-sm-offset-1">
                                                 <a href = <?php echo $link?>><button class="btn-primary btn" id="download">Download <i class="fa fa-download" style="color: #FFFFFF"></i></button> </a>
                                             </div>
