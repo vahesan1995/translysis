@@ -82,7 +82,6 @@ $userName = $_SESSION['username'];
                                 <th>Date</th>
                                 <th>Time</th>
                                 <th>Size</th>
-<!--                                <th>Link</th>-->
                                 <th>Download</th>
                             </tr>
                             </thead>
@@ -108,10 +107,9 @@ $userName = $_SESSION['username'];
                                     <td ><?php echo $day?></td>
                                     <td><?php echo $time?></td>
                                     <td ><?php echo $size?></td>
-<!--                                    <td >--><?php //echo $link ?><!--</td>-->
                                     <td><div class="row">
-                                            <div class="col-sm-8 col-sm-offset-2">
-                                                <a href = <?php echo $link?>><button class="btn-primary btn" id="download">Download</button> </a>
+                                            <div class="col-sm-8 col-sm-offset-1">
+                                                <a href = <?php echo $link?>><button class="btn-primary btn" id="download">Download <i class="fa fa-download" style="color: #FFFFFF"></i></button> </a>
                                             </div>
                                         </div>
                                     </td>
