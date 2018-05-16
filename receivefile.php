@@ -1,18 +1,19 @@
 <?php
 include 'config.php';
-$url=$_POST['link'];
+$url=$_POST['link'];    //file location
 $email=$_POST['email'];
-$filename=$_POST['filename'];
+$filename=$_POST['filename'];   //filename
 
-$filequery=$mysqli->query("Select Count(fileid) as count from files");
+$filequery=$mysqli->query("Select Count(fileid) as count from files");  //num of files
 $filecount=$filequery->fetch_object();
 $count=$filecount->count;
 $count+=1;
-$filename=substr($filename, 0, -4);
+$filename=substr($filename, 0, -4); //making unique file name
 $filename=$filename.(string)$count.'.pdf';
 
-$path = '/storage/ssd4/319/5689319/public_html/files/'.$filename;
+$path = '/storage/ssd4/319/5689319/public_html/files/'.$filename;  // location to save file
 $newfname = $path;
+//File Transfer
 echo 'Starting File Transfer!<br>';
 $file = fopen ($url, "rb");
 if($file) {
@@ -23,20 +24,20 @@ if($file) {
         }
 }
 if($file) {
-    fclose($file);
+    fclose($file);  //close file
 }
 if($newf) {
     fclose($newf);
 }
 echo 'File Transfered!';
 
-$date=date('Y-m-d H:i:s');
+$date=date('Y-m-d H:i:s');  //received date and time
 
-$query = $mysqli->query("SELECT * from user where email = '$email'");
+$query = $mysqli->query("SELECT * from user where email = '$email'");   //user details
 $obj = $query->fetch_object();
 $username=$obj->username;
 
-$fileid=$username.(string)$count;
+$fileid=$username.(string)$count;   //unique file id
 $loc='files/'.$filename;
 $size=filesize($loc);
 
@@ -44,9 +45,9 @@ $results=$mysqli->query("INSERT INTO files (`username`,`fileid`, `filename`,`ema
 
 echo "<br>";
 if($results){
-    echo 'success';
+    echo 'File transfer Successful';
 } else {
-    echo 'failed';
+    echo 'File Transfer Failed';
 }
 
 ?>
