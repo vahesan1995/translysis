@@ -10,16 +10,13 @@ $userName = $_SESSION['username'];
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!--<script src="https://www.w3schools.com/lib/w3.js"></script>-->
     <script src="js/w3.js"></script>
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!--<script src="https://www.w3schools.com/lib/w3.js"></script>-->
     <script src="js/w3.js"></script>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-
     <link rel="stylesheet" href="css/morris.css" type="text/css"/>
     <!-- Graph CSS -->
     <link href="css/font-awesome.css" rel="stylesheet">
@@ -30,12 +27,10 @@ $userName = $_SESSION['username'];
     <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <!-- lined-icons -->
     <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
-
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/w3.js"></script>
-
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
     <!-- Custom CSS -->
@@ -77,26 +72,6 @@ $userName = $_SESSION['username'];
             max-width: 900px;
             position: relative;
             margin: auto;
-        }
-
-        /* Caption text */
-        .text {
-            color: #f2f2f2;
-            font-size: 15px;
-            padding: 8px 12px;
-            position: absolute;
-            bottom: 8px;
-            width: 100%;
-            text-align: center;
-        }
-
-        /* Number text (1/3 etc) */
-        .numbertext {
-            color: #060606;
-            font-size: 12px;
-            padding: 8px 12px;
-            position: absolute;
-            top: 0;
         }
 
         /* The dots/bullets/indicators */
@@ -151,28 +126,27 @@ $userName = $_SESSION['username'];
     <div class="col-md-8 agile-info-stat" style="width: 100%; ">
         <div class="stats-info stats-last widget-shadow">
             <div class="slideshow-container">
+                <!--image 1-->
                 <div class="mySlides fade">
-                    <!--<div class="numbertext">1 / 3</div>-->
                     <img src="images/bigdata.png" style="width:100%">
-                    <!--<div class="text" style="color: #008DE7">After Big Data Analysis</div>-->
                 </div>
+                <!--image 2-->
                 <div class="mySlides fade">
-                    <!--<div class="numbertext">2 / 3</div>-->
                     <img src="images/data-analytics.jpg" style="width:103%">
-                    <!--<div class="text" style="color: #008DE7">Get Your Results</div>-->
                 </div>
+                <!--image 3-->
                 <div class="mySlides fade">
-                    <!--<div class="numbertext">3 / 3</div>-->
                     <img src="images/g1.jpg" style="width:103%">
-                    <!--<div class="text" style="color: #008DE7">Download Results</div>-->
                 </div>
             </div>
             <br>
+            <!--dots below the slide show-->
             <div style="text-align:center">
                 <span class="dot"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>
             </div>
+            <!--script for slide show-->
             <script>
                 var slideIndex = 0;
                 showSlides();
@@ -215,7 +189,6 @@ $userName = $_SESSION['username'];
     </div>
 </div>
 </body>
-<!--//content-inner-->
 <!--/sidebar-menu-->
 <div class="clearfix"></div>
 <script>
