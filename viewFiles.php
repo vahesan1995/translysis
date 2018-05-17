@@ -87,8 +87,10 @@ $userName = $_SESSION['username'];
                             </thead>
                             <tbody>
                             <?php
-                            $fileQuery = "SELECT * from files where username='$username' ORDER BY date DESC ";  //get file details
-                            $fileQuery = $mysqli->query($fileQuery);
+                            $statement = $mysqli->prepare("SELECT * from files where username=? ORDER BY date DESC ");    //get file details
+                            $statement->bind_param('s',$username);
+                            $statement->execute();
+                            $fileQuery=$statement->get_result();
                             $count=0;
                             while($fileObj = $fileQuery->fetch_object()){
                                 $filename = $fileObj->filename;

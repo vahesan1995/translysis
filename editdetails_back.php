@@ -12,15 +12,19 @@ $password = md5($password);     //encryption
 
 $erreturn_value="username=".$username;
 
-$results=$mysqli->query("SELECT * from user where username ='".$username."'");      //getting user details
+$statement=$mysqli->prepare("SELECT * from user where username =?");      //getting user details
+$statement->bind_param('s',$username);
+$statement->execute();
+$results=$statement->get_result();
 $obj=$results->fetch_object();
 $pass=$obj->password;
 $named =$obj-> name;
 
 if($password==$pass) {
     if ($name!=$named){     //name change
-        $query=$mysqli->query("Update user set name='$name' WHERE username='$username'");
-        if($query==true){
+        $statement1=$mysqli->prepare("Update user set name=? WHERE username='$username'");
+        $statement1->bind_param('s',$name);
+        if($statement1->execute()){
             echo '<meta http-equiv="refresh" content="0; URL=editdetails.php?success=saved">';      //name changed
         } else {
             echo '<meta http-equiv="refresh" content="0; URL=editdetails.php?databaseError;">';     //database error

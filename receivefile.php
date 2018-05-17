@@ -31,7 +31,10 @@ if($newf) {
 
 $date=date('Y-m-d H:i:s');  //received date and time
 
-$query = $mysqli->query("SELECT * from user where email = '$email'");   //user details
+$statement = $mysqli->prepare("SELECT * from user where email = ?");   //user details
+$statement->bind_param('s',$email);
+$statement->execute();
+$query=$statement->get_result();
 $obj = $query->fetch_object();
 $username=$obj->username;
 

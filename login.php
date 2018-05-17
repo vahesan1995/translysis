@@ -6,7 +6,10 @@ $username = $_POST['username'];     //get username
 $password=$_POST['password'];       //get password
 $password = md5($password);         //encryption
 
-$results = $mysqli->query("SELECT * from user where username = '".$username."' and password = '".$password."'");    //user details
+$statement = $mysqli->prepare("SELECT * from user where username =? and password =?");    //user details
+$statement->bind_param('ss',$username,$password);
+$statement->execute();
+$results=$statement->get_result();
 $num_rows = mysqli_num_rows($results);
 if ($num_rows==1) {
     $obj = $results->fetch_object();

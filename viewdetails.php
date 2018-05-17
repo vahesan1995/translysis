@@ -1,7 +1,7 @@
 <?php
 include_once("config.php");
 include_once('system_session.php');
-$userName = $_SESSION['username'];
+$username = $_SESSION['username'];
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -77,10 +77,11 @@ $userName = $_SESSION['username'];
                         <table id="table">
                             <tbody>
                             <?php
-                            $userQuery = "SELECT * from user where username='$username'";
-                            $userQuery = $mysqli->query($userQuery);
+                            $statement = $mysqli->prepare("SELECT * from user where username=?");
+                            $statement->bind_param('s',$username);
+                            $statement->execute();
+                            $userQuery=$statement->get_result();
                             while($userObj = $userQuery->fetch_object()) {
-                                $username = $userObj->username;
                                 $name = $userObj->name;
                                 $email = $userObj->email;
                                 $platform = $userObj->platform;

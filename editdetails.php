@@ -1,13 +1,14 @@
 <?php
 include_once("config.php");
 include_once('system_session.php');
-$userName = $_SESSION['username'];  //username of current user
+$username = $_SESSION['username'];  //username of current user
 
-$userQuery = "SELECT * from user where username='$userName'";   //getting user details
-$userQuery = $mysqli->query($userQuery);
+$statement=$mysqli->prepare("SELECT * from user where username =?");      //getting details from user table
+$statement->bind_param('s',$username);
+$statement->execute();
+$userQuery=$statement->get_result();
 while($userObj = $userQuery->fetch_object()) {
     //user details to display
-    $username = $userObj->username;
     $name = $userObj->name;
     $email = $userObj->email;
     $platform = $userObj->platform;
@@ -101,7 +102,7 @@ while($userObj = $userQuery->fetch_object()) {
                         <div class="clearfix"> </div><br>
                         <div class="col-md-12 form-group1 form-last">
                             <label class="control-label">Username</label>
-                            <input type="text" value="<?php echo $userName; ?>" required="" id="username" name="username" readonly>
+                            <input type="text" value="<?php echo $username; ?>" required="" id="username" name="username" readonly>
                             </div>
                         <div class="clearfix"> </div><br>
                         <div class="col-md-12 form-group1 group-mail">
